@@ -1,0 +1,35 @@
+class Paciente:
+    def __init__(self, nome, idade, cpf):
+        self.__nome = nome
+        self.__idade = idade
+        self.__cpf = cpf
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def idade(self):
+        return self.__idade
+
+    @property
+    def cpf(self):
+        return self.__cpf
+
+    def envelhecer(self):
+        self.__idade += 1
+
+
+nome = input("Informe o nome: ")
+cpf = int(input("Informe o CPF: "))
+idade = int(input("Informe a idade: "))
+
+paciente = Paciente(nome, cpf, idade)
+
+paciente.envelhecer()
+paciente.envelhecer()
+
+
+print(paciente.nome)
+print(paciente.cpf)
+print(paciente.idade)
