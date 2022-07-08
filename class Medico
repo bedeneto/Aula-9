@@ -1,0 +1,37 @@
+class Medico:
+    def __init__(self, nome, crm):
+        self.__nome = nome
+        self.__crm = crm
+        self.__especialidade = []
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def crm(self):
+        return self.__crm
+
+    @property
+    def especialidade(self):
+        return self.__especialidade
+
+    @especialidade.setter
+    def especialidade(self, nEsp):
+        valid = input(f"O medico fez residência na área {nEsp}? (s/n) ").lower()
+        if valid == "s":
+            self.__especialidade.append(nEsp)
+
+
+nome = input("Informe o nome do médico: ")
+crm = input("Informe o CRM do médico: ")
+
+medico = Medico(nome, crm)
+
+print(medico.nome)
+print(medico.crm)
+print(medico.especialidade)
+
+medico.especialidade = 'Geriatria'
+
+print(medico.especialidade)
