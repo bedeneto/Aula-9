@@ -1,0 +1,36 @@
+class Endereco:
+    def __init__(self, rua, bairro, cidade):
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+
+class Empresa:
+    def __init__(self, razao_social, cnpj):
+        self.razao_social = razao_social
+        self.cnpj = cnpj
+        self.lista_endereco = []
+
+    def adcEndereco(self):
+        rua = input("Rua: ")
+        bairro = input("Bairro: ")
+        cidade = input("Cidade: ")
+        endereco = Endereco(rua, bairro, cidade)
+        self.lista_endereco.append(endereco)
+
+    def apresentarEnd(self):
+        print(f"Empresa: {self.razao_social}")
+        print(f"CNPJ: {self.cnpj}")
+        print("---------------------------------")
+
+        for i in range(0, len(self.lista_endereco)):
+            print(f"Rua: {self.lista_endereco[i].rua}")
+            print(f"Bairro: {self.lista_endereco[i].bairro}")
+            print(f"Cidade: {self.lista_endereco[i].cidade}")
+            print('-----------------')
+
+razao_social = input("Informe a razao social: ")
+cnpj = input("Informe o CNPJ: ")
+empresa1 = Empresa(razao_social, cnpj)
+empresa1.adcEndereco()
+empresa1.adcEndereco()
+empresa1.apresentarEnd()
