@@ -1,0 +1,40 @@
+class Endereco:
+    def __init__(self, rua, bairro, cidade):
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+
+    def rua(self):
+        self.rua = input("Informe a rua: ")
+
+    def bairro(self):
+        self.bairro = input("Informe o bairro: ")
+
+    def cidade(self):
+        self.cidade = input("Informe a cidade: ")
+
+class Pessoa:
+    def __init__(self, nome, telefone):
+        self.nome = nome
+        self.telefone = telefone
+        self.endereco = ''
+
+    def infEndereco(self):
+        rua = input('Rua: ')
+        bairro = input('Bairro: ')
+        cidade = input('Cidade: ')
+        self.endereco = Endereco(rua, bairro, cidade)
+
+    def informacoes(self):
+        print(f'Nome: {self.nome}')
+        print(f'Telefone: {self.telefone}')
+        print(f'Endereco: {self.endereco.rua}')
+        print(f'Endereco: {self.endereco.bairro}')
+        print(f'Endereco: {self.endereco.cidade}')
+
+nome = input("nome: ")
+telefone = input("telefone: ")
+pessoa = Pessoa(nome, telefone)
+
+pessoa.infEndereco()
+pessoa.informacoes()
